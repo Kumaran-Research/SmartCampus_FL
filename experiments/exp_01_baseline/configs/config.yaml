@@ -1,0 +1,47 @@
+# Federated Learning Configuration for Smart Campus Face Recognition
+
+# Server Configuration
+server:
+  num_rounds: 4
+  fraction_fit: 1.0
+  fraction_evaluate: 1.0
+  min_fit_clients: 2
+  min_evaluate_clients: 2
+  min_available_clients: 2
+  proximal_mu: 0.0
+  address: "localhost:8080"
+
+# Client Configuration
+client:
+  learning_rate: 0.0001
+  mu: 0.0  # Proximal term
+  batch_size: 8
+  epochs: 15
+  data_dirs:
+    - "data/client1"
+    - "data/client2"
+
+# Model Configuration
+model:
+  num_classes: 5  # To be set based on data_dir
+
+# Data Configuration
+data:
+  raw_dir: "data/att_faces"
+  processed_dir: "data/processed_faces"
+  client1_dir: "data/client1"
+  client2_dir: "data/client2"
+
+# Preprocessing Configuration
+preprocessing:
+  face_cascade: "haarcascade_frontalface_default.xml"
+  target_size: [112, 112]
+  scale_factor: 1.1
+  min_neighbors: 5
+
+# Experiment Configuration
+experiment:
+  name: "exp_01_baseline"
+  logs_dir: "experiments/exp_01_baseline/logs"
+  checkpoints_dir: "experiments/exp_01_baseline/checkpoints"
+  configs_dir: "experiments/exp_01_baseline/configs"

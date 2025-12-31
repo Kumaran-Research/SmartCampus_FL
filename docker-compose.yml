@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  fl-server:
+    image: smart-campus-fl
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+    command: python server.py
+    networks:
+      - fl-network
+
+  fl-client1:
+    image: smart-campus-fl
+    depends_on:
+      - fl-server
+    volumes:
+      - .:/app
+    command: python client.py data/client1
+    networks:
+      - fl-network
+
+  fl-client2:
+    image: smart-campus-fl
+    depends_on:
+      - fl-server
+    volumes:
+      - .:/app
+    command: python client.py data/client2
+    networks:
+      - fl-network
+
+networks:
+  fl-network:
+    driver: bridge
