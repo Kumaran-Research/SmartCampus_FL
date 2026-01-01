@@ -28,7 +28,9 @@ The dataset is used to **simulate a smart campus federated learning environment*
 
 data/
 ├── raw/          # Original dataset files (not tracked in Git)
+
 ├── processed/    # Preprocessed and client-partitioned data
+
 └── README.md     # Dataset documentation
 
 
