@@ -48,8 +48,9 @@ Data preprocessing is performed using scripts in `src/utils/` and includes:
 - Partitioning data into client-specific subsets
 
 To reproduce preprocessing:
-```bash
+
 python src/utils/preprocess.py
+
 
 ## Ethical and Privacy Considerations
 
