@@ -39,7 +39,6 @@ The system follows a standard federated learning workflow:
 
 - Performance is evaluated across communication rounds
 
-[Uploading Report_Mini_Project 1.docx…]()
 <img width="1560" height="1487" alt="Architecture Diagram" src="https://github.com/user-attachments/assets/3814b290-19c8-4cf8-97ea-8f99ae478bfd" />
 
 
@@ -111,6 +110,7 @@ Deployment in real-world smart campus infrastructure
 # 10. References
 
 McMahan et al., Communication-Efficient Learning of Deep Networks from Decentralized Data, AISTATS 2017
+
 
 
 
