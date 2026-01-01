@@ -61,15 +61,15 @@ python src/utils/preprocess.py
 
 ## Ethical and Privacy Considerations
 
-This project does not distribute or publish raw facial data
+- This project does not distribute or publish raw facial data
 
-The dataset is used strictly for academic research and experimentation
+-The dataset is used strictly for academic research and experimentation
 
-Federated Learning is employed to demonstrate privacy-preserving model training
+-Federated Learning is employed to demonstrate privacy-preserving model training
 
-No personal or real-world campus data is used
+-No personal or real-world campus data is used
 
-This repository adheres to responsible AI and data-handling practices.
+-This repository adheres to responsible AI and data-handling practices.
 
 ## Data Access
 
