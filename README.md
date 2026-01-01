@@ -1,43 +1,112 @@
 # Smart Campus Federated Learning for Face Recognition
+## Privacy-Preserving Face Recognition using Federated Learning
 
-## Problem Statement
-In smart campus environments, face recognition systems are essential for security and access control. However, traditional centralized training raises privacy concerns when data from multiple institutions (e.g., students from different departments) must be combined. This project addresses the challenge of training a robust face recognition model across distributed, privacy-sensitive datasets using federated learning.
+1. Problem Statement
 
-## Research Motivation
-Federated learning enables collaborative model training without data sharing, preserving user privacy. This is particularly relevant for educational institutions where student data cannot be centralized due to regulations. The project demonstrates the feasibility of federated face recognition on the AT&T Faces dataset, simulating a multi-client scenario.
+Smart campus environments increasingly rely on face recognition systems for security, access control, and identity verification. Conventional centralized training approaches require aggregating facial data from multiple sources, which raises serious privacy, ethical, and regulatory concerns—especially in educational institutions handling sensitive student data. This project addresses the challenge of training an accurate face recognition system across distributed, privacy-sensitive datasets without centralizing raw data.
 
-## Method Overview
-- **Model**: GhostFaceNetV2, a lightweight CNN for face recognition.
-- **Framework**: Flower for federated orchestration.
-- **Strategy**: FedProx for handling non-IID data.
-- **Preprocessing**: Face detection and resizing to 112x112 grayscale.
-- **Training**: 4 communication rounds, 15 local epochs per round.
+2. Research Motivation
 
-## Architecture Description
-- `src/models/`: Neural network definitions.
-- `src/training/`: Server and client training logic.
-- `src/evaluation/`: Model testing and verification.
-- `src/utils/`: Data preprocessing and utilities.
-- `configs/`: Centralized hyperparameters.
-- `experiments/`: Experiment artifacts and logs.
-- `results/`: Parsed metrics and tables.
+Federated Learning (FL) enables collaborative model training while keeping data localized at client sites, thereby preserving privacy. This paradigm is particularly suitable for smart campus scenarios, where data sharing across departments or institutions is restricted. The project explores the feasibility of federated face recognition by simulating a multi-client campus environment using a standard benchmark dataset.
 
-## Experimental Setup
-- **Dataset**: AT&T Faces (40 subjects, 10 images each), split into client subsets.
-- **Clients**: 2 simulated clients with disjoint subject groups.
-- **Hardware**: CPU-based training.
-- **Metrics**: Client-side accuracy per round.
+3. Method Overview
 
-## Quantitative Results
-See `results/tables/experiment_results.csv` for parsed accuracies from logs.
+This work implements a federated face recognition pipeline using a lightweight convolutional neural network and a client–server learning framework.
 
-## Reproducibility Steps
-1. Install dependencies: `pip install -r requirements.txt`
-2. Preprocess data: `python src/utils/preprocess.py`
-3. Run server: `python src/training/server.py`
-4. Run clients: `python src/training/client.py data/client1` and `python src/training/client.py data/client2`
-5. Parse results: `python scripts/parse_logs.py`
+Key components:
 
-## Docker Deployment
-Use `docker-compose.yml` for containerized execution.
-#
+Model: GhostFaceNetV2 (lightweight CNN for face recognition)
+
+Federated Framework: Flower (FL orchestration)
+
+Aggregation Strategy: FedProx to mitigate non-IID client data
+
+Preprocessing: Face normalization and resizing to 112×112 grayscale images
+
+Training: 4 communication rounds with 15 local epochs per client per round
+
+4. System Architecture
+
+The system follows a standard federated learning workflow:
+
+Each client preprocesses and trains on its local facial dataset
+
+Local model updates are sent to the central server
+
+The server aggregates updates using FedProx
+
+The updated global model is redistributed to clients
+
+Performance is evaluated across communication rounds
+
+Repository structure reflects this architecture:
+
+src/models/ — Neural network definitions
+
+src/training/ — Client and server training logic
+
+src/evaluation/ — Model verification and testing
+
+src/utils/ — Preprocessing and helper utilities
+
+configs/ — Centralized hyperparameters
+
+experiments/ — Experiment artifacts and logs
+
+results/ — Parsed metrics and result tables
+
+5. Experimental Setup
+
+Dataset: AT&T Faces Dataset (40 subjects, 10 images per subject)
+
+Clients: 2 simulated clients with disjoint subject partitions
+
+Training Mode: CPU-based federated training
+
+Evaluation Metric: Client-side classification accuracy across rounds
+
+6. Quantitative Results
+
+Parsed accuracy metrics from federated training rounds are available in:
+
+results/tables/experiment_results.csv
+
+
+The results demonstrate stable convergence of the global model while preserving strict data locality.
+
+7. Reproducibility
+
+This repository is structured to ensure full reproducibility.
+
+Setup
+pip install -r requirements.txt
+
+Data Preprocessing
+python src/utils/preprocess.py
+
+Federated Training
+python src/training/server.py
+python src/training/client.py data/client1
+python src/training/client.py data/client2
+
+Result Parsing
+python scripts/parse_logs.py
+
+8. Docker Deployment
+
+For containerized execution, use the provided docker-compose.yml to run the full federated learning pipeline in isolated environments.
+
+9. Future Work
+
+Integration of differential privacy mechanisms
+
+Scaling to larger client populations
+
+Evaluation under stronger non-IID data distributions
+
+Deployment in real-world smart campus infrastructure
+
+10. References
+
+McMahan et al., Communication-Efficient Learning of Deep Networks from Decentralized Data, AISTATS 2017
+
