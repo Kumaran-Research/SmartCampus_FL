@@ -63,18 +63,18 @@ python src/utils/preprocess.py
 
 - This project does not distribute or publish raw facial data
 
--The dataset is used strictly for academic research and experimentation
+- The dataset is used strictly for academic research and experimentation
 
--Federated Learning is employed to demonstrate privacy-preserving model training
+- Federated Learning is employed to demonstrate privacy-preserving model training
 
--No personal or real-world campus data is used
+- No personal or real-world campus data is used
 
--This repository adheres to responsible AI and data-handling practices.
+- This repository adheres to responsible AI and data-handling practices.
 
 ## Data Access
 
 The AT&T Faces Dataset is publicly available for research purposes. Users must obtain the dataset directly from the original source and ensure compliance with its licensing and usage terms.
 
-## Reproducibility Statement
+🔁 ## Reproducibility Statement
 
 All experiments in this repository can be reproduced without sharing raw facial images, reinforcing the privacy-preserving objectives of the project.
