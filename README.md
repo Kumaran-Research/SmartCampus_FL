@@ -1,5 +1,5 @@
-# Smart Campus Federated Learning for Face Recognition
-## Privacy-Preserving Face Recognition using Federated Learning
+[Report_Mini_Project 1.docx](https://github.com/user-attachments/files/24399132/Report_Mini_Project.1.docx)# Smart Campus Federated Learning for Face Recognition
+## 📌 Privacy-Preserving Face Recognition using Federated Learning
 
 # 1. Problem Statement
 
@@ -15,56 +15,55 @@ This work implements a federated face recognition pipeline using a lightweight c
 
 Key components:
 
-Model: GhostFaceNetV2 (lightweight CNN for face recognition)
+- Model: GhostFaceNetV2 (lightweight CNN for face recognition)
 
-Federated Framework: Flower (FL orchestration)
+- Federated Framework: Flower (FL orchestration)
 
-Aggregation Strategy: FedProx to mitigate non-IID client data
+- Aggregation Strategy: FedProx to mitigate non-IID client data
 
-Preprocessing: Face normalization and resizing to 112×112 grayscale images
+- Preprocessing: Face normalization and resizing to 112×112 grayscale images
 
-Training: 4 communication rounds with 15 local epochs per client per round
+- Training: 4 communication rounds with 15 local epochs per client per round
 
 # 4. System Architecture
 
-
 The system follows a standard federated learning workflow:
 
-Each client preprocesses and trains on its local facial dataset
+- Each client preprocesses and trains on its local facial dataset
 
-Local model updates are sent to the central server
+- Local model updates are sent to the central server
 
-The server aggregates updates using FedProx
+- The server aggregates updates using FedProx
 
-The updated global model is redistributed to clients
+- The updated global model is redistributed to clients
 
-Performance is evaluated across communication rounds
+- Performance is evaluated across communication rounds
+
+![Uploading Architecture Diagram.png…]()
+
 
 Repository structure reflects this architecture:
 
-src/models/ — Neural network definitions
+- src/models/ — Neural network definitions
 
-src/training/ — Client and server training logic
+- src/training/ — Client and server training logic
 
-src/evaluation/ — Model verification and testing
+- src/evaluation/ — Model verification and testing
 
-src/utils/ — Preprocessing and helper utilities
+- src/utils/ — Preprocessing and helper utilities
 
-configs/ — Centralized hyperparameters
+- configs/ — Centralized hyperparameters
 
-experiments/ — Experiment artifacts and logs
-
-results/ — Parsed metrics and result tables
 
 # 5. Experimental Setup
 
-Dataset: AT&T Faces Dataset (40 subjects, 10 images per subject)
+- Dataset: AT&T Faces Dataset (40 subjects, 10 images per subject)
 
-Clients: 2 simulated clients with disjoint subject partitions
+- Clients: 2 simulated clients with disjoint subject partitions
 
-Training Mode: CPU-based federated training
+- Training Mode: CPU-based federated training
 
-Evaluation Metric: Client-side classification accuracy across rounds
+- Evaluation Metric: Client-side classification accuracy across rounds
 
 # 6. Quantitative Results
 
@@ -110,5 +109,6 @@ Deployment in real-world smart campus infrastructure
 # 10. References
 
 McMahan et al., Communication-Efficient Learning of Deep Networks from Decentralized Data, AISTATS 2017
+
 
 
