@@ -1,4 +1,4 @@
-[Report_Mini_Project 1.docx](https://github.com/user-attachments/files/24399132/Report_Mini_Project.1.docx)# Smart Campus Federated Learning for Face Recognition
+# Smart Campus Federated Learning for Face Recognition
 ## 📌 Privacy-Preserving Face Recognition using Federated Learning
 
 # 1. Problem Statement
@@ -39,7 +39,9 @@ The system follows a standard federated learning workflow:
 
 - Performance is evaluated across communication rounds
 
-![Uploading Architecture Diagram.png…]()
+[Uploading Report_Mini_Project 1.docx…]()
+<img width="1560" height="1487" alt="Architecture Diagram" src="https://github.com/user-attachments/assets/3814b290-19c8-4cf8-97ea-8f99ae478bfd" />
+
 
 
 Repository structure reflects this architecture:
@@ -109,6 +111,7 @@ Deployment in real-world smart campus infrastructure
 # 10. References
 
 McMahan et al., Communication-Efficient Learning of Deep Networks from Decentralized Data, AISTATS 2017
+
 
 
 
