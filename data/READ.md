@@ -30,6 +30,10 @@ data/
 
 ├── raw/          # Original dataset files (not tracked in Git)
 
+├──client 1       # client-partitioned data 
+
+├──client 2       # client-partitioned data 
+
 ├── processed/    # Preprocessed and client-partitioned data
 
 └── README.md     # Dataset documentation
