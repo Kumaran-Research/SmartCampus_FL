@@ -75,6 +75,6 @@ python src/utils/preprocess.py
 
 The AT&T Faces Dataset is publicly available for research purposes. Users must obtain the dataset directly from the original source and ensure compliance with its licensing and usage terms.
 
-🔁 ## Reproducibility Statement
+## 🔁 Reproducibility Statement
 
 All experiments in this repository can be reproduced without sharing raw facial images, reinforcing the privacy-preserving objectives of the project.
